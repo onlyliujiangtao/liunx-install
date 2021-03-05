@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<style>
+			body, table{font-family: 微软雅黑; font-size: 10pt}
+			
+			table{border-collapse: collapse; border: 1px solid gray; border-width: 2px 1px 2px 1px;}
+			th{border: 1px solid gray; padding: 4px; background-color: #ddd;}
+			td{border: 1px solid gray; padding: 4px;}
+			tr:nth-child(2n){background-color: #f8f8f8;}
+			pre{border: 2px solid #d6d6d6; padding: 0px; border-radius: 3px;}
+		</style>
+	</head>
+	<body>
+		<div><span style="font-size: x-large; color: rgb(255, 153, 0);">1. 安装环境</span>
+		</div>
+		<div>yum install -y pcre pcre-devel&nbsp;zlib zlib-devel&nbsp;openssl openssl-devel gcc
+		</div>
+		<div><span style="font-size: x-large; color: rgb(255, 153, 0);">2. 解压nginx</span>
+		</div>
+		<div>tar -zxvf nginx****
+		</div>
+		<div><span style="font-size: x-large; color: rgb(255, 153, 0);">3. 编译安装三部曲</span>
+		</div>
+		<div>./configure --prefix=/usr/local/nginx --pid-path=/var/run/nginx/nginx.pid --lock-path=/var/lock/nginx.lock --error-log-path=/var/log/nginx/error.log --http-log-path=/var/log/nginx/access.log --with-http_gzip_static_module --with-pcre --http-client-body-temp-path=/var/temp/nginx/client --http-proxy-temp-path=/var/temp/nginx/proxy --http-fastcgi-temp-path=/var/temp/nginx/fastcgi --http-uwsgi-temp-path=/var/temp/nginx/uwsgi --http-scgi-temp-path=/var/temp/nginx/scgi --with-http_ssl_module&nbsp;--with-http_realip_module
+		</div>
+		<div>make
+		</div>
+		<div>make install
+		</div>
+		<div><span style="font-size: x-large; color: rgb(255, 153, 0);">4. 启动nginx</span>
+		</div>
+		<div>/usr/local/nginx/sbin/nginx
+		</div>
+		<div>nginx -s stop
+		</div>
+		<div>nginx -s reload
+		</div>
+		<div><br />
+		</div>
+	</body>
+</html>
